@@ -3,7 +3,7 @@
     <div class="bg-[#dfa674] rounded-2xl flex max-w-3xl p-5 items-center">
         <div class="md:w-1/2 px-8">
             <h2 class="font-bold text-3xl text-[#002D74]">Login</h2>
-            <p class="text-sm mt-4 text-[#002D74]">vienvenido </p>
+            <p class="text-sm mt-4 text-[#002D74]">Bienvenido </p>
 
             <form action="" class="flex flex-col gap-4">
                 <input class="p-2 mt-8 rounded-xl border" type="email" name="email" placeholder="Email">
