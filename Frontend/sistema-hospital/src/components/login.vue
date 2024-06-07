@@ -1,8 +1,8 @@
 <template>
     <section class="bg-gray-100 min-h-screen flex box-border justify-center items-center">
-    <div class="bg-[#dfa674] rounded-2xl flex max-w-3xl p-5 items-center">
+    <div class="bg-[#D2E8E3] rounded-2xl flex max-w-3xl p-5 items-center">
         <div class="md:w-1/2 px-8">
-            <h2 class="font-bold text-3xl text-[#002D74]">Login</h2>
+            <h2 class="font-bold text-3xl text-[#0F6466]">Login</h2>
             <p class="text-sm mt-4 text-[#002D74]">Bienvenido </p>
 
             <form action="" class="flex flex-col gap-4">
@@ -30,25 +30,22 @@
                         </path>
                     </svg>
                 </div>
-                <button class="bg-[#002D74] text-white py-2 rounded-xl hover:scale-105 duration-300 hover:bg-[#206ab1] font-medium" type="submit">Login</button>
+                <button class="bg-[#0593A2] text-white py-2 rounded-xl hover:scale-105 duration-300 hover:bg-[#002c7424] font-medium" type="submit">Login</button>
+                <RouterLink to="/dashboard">
+                <button class="bg-[#0593A2] text-white py-2 rounded-xl hover:scale-105 duration-300 hover:bg-[#002c7424] font-medium" type="submit">vasmos a el dashboard</button>
+                </RouterLink>
             </form>
-            <div class="mt-6  items-center text-gray-100">
-                <hr class="border-gray-300">
-                <p class="text-center text-sm">OR</p>
-                <hr class="border-gray-300">
-            </div>
-
-            <div class="mt-10 text-sm border-b border-gray-500 py-5 playfair tooltip">Olvidate tu contraseña?</div>
+            <div class="mt-10 text-sm border-b border-gray-500 py-5 playfair tooltip">Olvidaste tu contraseña?</div>
 
             <div class="mt-4 text-sm flex justify-between items-center container-mr">
-                <p class="mr-3 md:mr-0 ">Si no tienes una cuenta</p>
+                <p class="mr-3 md:mr-0 ">No tienes una cuenta</p>
                 <RouterLink to="/register">
-                <button class="hover:border register text-white bg-[#002D74] hover:border-gray-400 rounded-xl py-2 px-5 hover:scale-110 hover:bg-[#002c7424] font-semibold duration-300">Registrar</button>
+                <button class="hover:border register text-white bg-[#0593A2] hover:border-gray-400 rounded-xl py-2 px-5 hover:scale-110 hover:bg-[#002c7424] font-semibold duration-300">Registrar</button>
                 </RouterLink>
             </div>
         </div>
         <div class="md:block hidden w-1/2">
-            <img class="rounded-2xl max-h-[1600px]" src="https://images.unsplash.com/photo-1552010099-5dc86fcfaa38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxmcmVzaHxlbnwwfDF8fHwxNzEyMTU4MDk0fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="login form image">
+            <img class="rounded-2xl max-h-[1600px]" src="https://imgs.search.brave.com/Um3Se7C_ZbhQq31Km3MtBNzqFpqprBd5uXbD4_5ZPYQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAxLzAzLzg1LzM4/LzM2MF9GXzEwMzg1/Mzg3Ml85RzFtbzVI/SGR0aGVSbXNTV0s3/SXJVeXdOM1U5WDlo/Vy5qcGc" alt="login form image">
         </div>
     </div>
 </section>
