@@ -30,13 +30,6 @@
               <button class="bg-[#0593A2] text-white py-2 rounded-xl w-full hover:scale-105 duration-300 hover:bg-[#002c7424] font-medium" type="submit">Registrar</button>
             </div>
           </form>
-  
-          <div class="mt-4 text-sm flex justify-between items-center">
-            <p>¿Ya tienes una cuenta?</p>
-            <RouterLink to="/">
-            <button class="hover:border register text-white bg-[#0593A2] hover:border-gray-400 rounded-xl py-2 px-5 hover:scale-110 hover:bg-[#002c7424] font-semibold duration-300" @click="goToLogin">Iniciar Sesión</button>
-            </RouterLink>
-        </div>
         </div>
       </div>
     </section>
