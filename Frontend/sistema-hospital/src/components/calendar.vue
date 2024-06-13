@@ -1,67 +1,53 @@
 <template>
-  <div class="container">
-    <div class="columns-3">
-      <!-- Tabla de simbología -->
-      <div class="legend">
-        <div class="legend-item">
-          <div class="legend-color available"></div>
-          <div class="legend-label">Quirofano disponible</div>
-        </div>
-        <div class="legend-item">
-          <div class="legend-color busy"></div>
-          <div class="legend-label">Quirofano ocupado</div>
-        </div>
-      </div>
-      <!-- Fin de tabla de simbología -->
-
-      <!-- Tabla de quirofanos -->
-      <div class="quirofano-table">
-        <h2>Estado de los Quirofanos</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Quirofano</th>
-              <th>Estado</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(quirofano, index) in quirofanos" :key="index">
-              <td>Quirofano {{ index + 1 }}</td>
-              <td :class="[quirofano.estado ? 'available' : 'busy']">{{ quirofano.estado ? 'Disponible' : 'Ocupado' }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <!-- Fin de tabla de quirofanos -->
-    </div>
-
-    <!-- Calendario -->
-    <div class="calendar-container">
-      <h1 class="title">Calendario</h1>
-      <div class="calendar">
-        <div class="header">
-          <button @click="prevMonth">&lt;</button>
-          <div class="month">{{ monthNames[currentMonth] }} {{ currentYear }}</div>
-          <button @click="nextMonth">&gt;</button>
-        </div>
-        <div class="weekdays">
-          <div class="weekday" v-for="day in weekDays" :key="day">{{ day }}</div>
-        </div>
-        <div class="days">
-          <div
-            v-for="day in daysInMonth"
-            :key="day.date"
-            :class="['day', { today: isToday(day.date), selected: isSelected(day.date) }]"
-            @click="selectDate(day.date)"
-          >
-            {{ day.number }}
+  <div class="flex">
+    <div class="w-1/2 pr-4">
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Estado de los quirófanos</h2>
+        <div>
+          <div v-for="(quirofano, index) in quirofanos" :key="index" class="flex items-center mb-2">
+            <div class="w-1/2 text-right pr-2">
+              <span class="italic font-bold">Quirofano {{ index + 1 }}:</span>
+            </div>
+            <div class="w-1/2 pl-2">
+              <span class="italic font-bold" :class="[quirofano.estado ? 'text-green-500' : 'text-red-500']">{{ quirofano.estado ? 'Disponible' : 'Ocupado' }}</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Fin de Calendario -->
+
+    <div class="w-1/2 pl-4">
+      <div class="container">
+        <!-- Calendario -->
+        <div class="calendar-container">
+          <h2 class="text-lg font-semibold mb-2">Calendario</h2>
+          <div class="calendar">
+            <div class="header">
+              <button @click="prevMonth">&lt;</button>
+              <div class="month">{{ monthNames[currentMonth] }} {{ currentYear }}</div>
+              <button @click="nextMonth">&gt;</button>
+            </div>
+            <div class="weekdays">
+              <div class="weekday" v-for="day in weekDays" :key="day">{{ day }}</div>
+            </div>
+            <div class="days">
+              <div
+                v-for="day in daysInMonth"
+                :key="day.date"
+                :class="['day', { today: isToday(day.date), selected: isSelected(day.date) }]"
+                @click="selectDate(day.date)"
+              >
+                {{ day.number }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fin de Calendario -->
+      </div>
+    </div>
   </div>
 </template>
+
 
 <script>
 export default {
