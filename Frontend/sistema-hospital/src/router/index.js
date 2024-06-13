@@ -3,7 +3,8 @@ import RegisterUser from '@/components/registerUser.vue'
 import LoginVuew from '@/components/login.vue'
 import dashboard from '@/components/dashboard.vue'
 import Persona from '@/components/persona.vue'
-import Cirugia from '@/components/Cirugia.vue'
+
+import RegisterC from '@/components/RegisterC.vue'
 
 
 
@@ -26,10 +27,13 @@ const router = createRouter({
       component: dashboard,
       children:[
         {path:'/persona',name:'persona', component : Persona},
-        {path:'/cirugia',name:'cirugia', component : Cirugia}
+
+        {path:"/registerC",name:"registerC",component:RegisterC}
       ]
     }
   ]
 })
 
 export default router
+
+
