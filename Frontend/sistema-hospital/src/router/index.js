@@ -3,8 +3,8 @@ import RegisterUser from '@/components/registerUser.vue'
 import LoginVuew from '@/components/login.vue'
 import dashboard from '@/components/dashboard.vue'
 import Persona from '@/components/persona.vue'
-import RegisterC from '@/components/RegisterC.vue'
 
+import RegisterC from '@/components/RegisterC.vue'
 
 
 
@@ -27,6 +27,7 @@ const router = createRouter({
       component: dashboard,
       children:[
         {path:'/persona',name:'persona', component : Persona},
+
         {path:"/registerC",name:"registerC",component:RegisterC}
       ]
     }
