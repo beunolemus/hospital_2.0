@@ -6,6 +6,8 @@ import Persona from '@/components/persona.vue'
 import Calendar from '@/components/calendar.vue'
 
 
+import RegisterC from '@/components/RegisterC.vue'
+
 
 
 const router = createRouter({
@@ -27,10 +29,17 @@ const router = createRouter({
       component: dashboard,
       children:[
         {path:'/persona',name:'persona', component : Persona},
+<<<<<<< HEAD
         {path:'/calendario',name:'calendar', component : Calendar}
+=======
+
+        {path:"/registerC",name:"registerC",component:RegisterC}
+>>>>>>> master
       ]
     }
   ]
 })
 
 export default router
+
+

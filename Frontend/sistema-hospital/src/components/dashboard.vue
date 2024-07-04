@@ -209,6 +209,7 @@
                       </svg>
                 </button>
                 <ul id="dropdown-example_1" class="hidden py-2 space-y-2">
+<<<<<<< HEAD
                       <li>
                          <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Cirugias</a>
                       </li>
@@ -217,6 +218,12 @@
                          <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Calendario Cirugias</a>
                       </li>
                      </RouterLink>
+=======
+                     <li>
+                         <a href="RegisterC" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Cirugias</a>
+                      </li>
+
+>>>>>>> master
                 </ul>
              </li>
              <li>
