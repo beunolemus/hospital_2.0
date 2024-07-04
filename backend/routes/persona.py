@@ -1,57 +1,37 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
 from pydantic import BaseModel
 from datetime import datetime
-from typing import Optional, List
+from typing import Optional
 
-persona = APIRouter()
-personas = []
+persona =APIRouter()
+personas=[]
 
-class ModelPersonas(BaseModel):
-    id: int
-    nombre: str
-    primer_apellido: str
-    segundo_apellido: Optional[str]
+class model_personas(BaseModel):
+    id:str
+    nombre:str
+    primer_apellido:str
+    segundo_apellido:Optional[str]
     edad: int
-    fecha_nacimiento: datetime
-    curp: str
-    tipo_sangre: str
-    creacion_at: datetime = datetime.now()
+    fecha_nacimiento:datetime
+    curp:str
+    tipo_sangre:str
+    create_at: datetime = datetime.now()
     estatus: bool = False
 
-@persona.get("/")
+
+
+@persona.get('/')
+
 def bienvenida():
-    return "Bienvenido al API"
+    return "Bienvenida al sistema"
 
 @persona.get("/personas")
+
 def get_personas():
     return personas
 
-@persona.post("/personas")
-def save_personas(datos_personas: ModelPersonas):
-    personas.append(datos_personas)
-    return "Datos Guardados Correctamente"
+@persona.post('/personas')
 
-@persona.get("/personas/{persona_id}")
-def get_persona(persona_id: int):
-    for persona in personas:
-        if persona.id == persona_id:
-            return persona
-    raise HTTPException(status_code=404, detail="Persona no encontrada")
-
-
-
-@persona.put("/personas/{persona_id}")
-def update_persona(persona_id: int, datos_personas: ModelPersonas):
-    for index, persona in enumerate(personas):
-        if persona.id == persona_id:
-            personas[index] = datos_personas
-            return "Datos Actualizados Correctamente"
-    raise HTTPException(status_code=404, detail="Persona no encontrada")
-
-@persona.delete("/personas/{persona_id}")
-def delete_persona(persona_id: int):
-    for index, persona in enumerate(personas):
-        if persona.id == persona_id:
-            personas.pop(index)
-            return "Datos Eliminados Correctamente"
-    raise HTTPException(status_code=404, detail="Persona no encontrada")
+def save_personas(datos_persona:model_personas): 
+    personas.append(datos_persona)
+    return "Datos guardado correctamente"
