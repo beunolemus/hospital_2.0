@@ -1,9 +1,12 @@
-from fastapi import  FastAPI
-from routes.persona import persona
+from fastapi import FastAPI
+from routes.user import user
+from routes.person import person
 
+app=FastAPI(
+    title="Hospital",
+    description="API para el almacenamiento de informacipn de un Hospital"
+)
+app.include_router(user)
+app.include_router(person)
 
-
-app=FastAPI()
-app.include_router(persona)
-
-print ("Bienvenido a mi aplicacion")
+print ("Hola bienvenido a mi backend")
