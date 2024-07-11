@@ -1,4 +1,19 @@
 <template>
+    <div class="xl bg-red-500 text-white text-center p-5">
+      <div class="columns-3">
+        <div class="xl bg-purple-500 text-white text-center p-5">
+          <span class="box-decoration-slice bg-gradient-to-r from-red-600 to-yellow-500 text-white px-2 ...">
+            BIENVENIDO
+            <br />
+            HOSPITAL
+          </span>
+        </div>
+        <div class="xl bg-blue-500 text-white text-center p-5"></div>
+        <div class="xl bg-green-500 text-white text-center p-5"></div>
+      </div>
+    </div>
+
+
   <div class="flex flex-col items-center justify-center p-12">
     <!-- Encabezado y descripción centrados -->
     <div class="text-center mb-8">
