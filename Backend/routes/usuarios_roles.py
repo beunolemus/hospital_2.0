@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from datetime import datetime
 from typing import List
-
+import crud.usuarios_roles, config.db, schemas.usuarios_roles, models.usuarios_roles
 from config.db import SessionLocal
 
 usuario_roles = APIRouter()
@@ -18,7 +18,7 @@ def get_db():
     finally:
         db.close()
 
-@usaurio_roles.post("/usuarios_roles/", response_model=schemas.UsuarioRol)
+@usuario_roles.post("/usuarios_roles/", response_model=schemas.UsuarioRol)
 def create_usuario_rol(usuario_rol: schemas.UsuarioRolCreate, db: Session = Depends(get_db)):
     db_usuario_rol = models.UsuarioRol(**usuario_rol.dict(), Fecha_Registro=datetime.now())
     db.add(db_usuario_rol)
@@ -26,11 +26,11 @@ def create_usuario_rol(usuario_rol: schemas.UsuarioRolCreate, db: Session = Depe
     db.refresh(db_usuario_rol)
     return db_usuario_rol
 
-@usaurio_roles.get("/usuarios_roles/", response_model=List[schemas.UsuarioRol])
+@usuario_roles.get("/usuarios_roles/", response_model=List[schemas.UsuarioRol])
 def read_usuarios_roles(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
     return db.query(models.UsuarioRol).offset(skip).limit(limit).all()
 
-@usaurio_roles.put("/usuarios_roles/{usuario_rol_id}", response_model=schemas.UsuarioRol)
+@usuario_roles.put("/usuarios_roles/{usuario_rol_id}", response_model=schemas.UsuarioRol)
 def update_usuario_rol(usuario_rol_id: int, usuario_rol: schemas.UsuarioRolUpdate, db: Session = Depends(get_db)):
     db_usuario_rol = db.query(models.UsuarioRol).filter(models.UsuarioRol.Usuario_ID == usuario_rol_id).first()
     if db_usuario_rol:
@@ -42,7 +42,7 @@ def update_usuario_rol(usuario_rol_id: int, usuario_rol: schemas.UsuarioRolUpdat
         return db_usuario_rol
     raise HTTPException(status_code=404, detail=f"UsuarioRol with id {usuario_rol_id} not found")
 
-@usaurio_roles.delete("/usuarios_roles/{usuario_rol_id}", response_model=schemas.UsuarioRol)
+@usuario_roles.delete("/usuarios_roles/{usuario_rol_id}", response_model=schemas.UsuarioRol)
 def delete_usuario_rol(usuario_rol_id: int, db: Session = Depends(get_db)):
     db_usuario_rol = db.query(models.UsuarioRol).filter(models.UsuarioRol.Usuario_ID == usuario_rol_id).first()
     if db_usuario_rol:
