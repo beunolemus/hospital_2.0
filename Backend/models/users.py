@@ -12,5 +12,4 @@ class User(Base):
     created_at = Column(DateTime)
     estatus = Column(Boolean, default=False)
     Id_persona = Column(Integer)
-
-    # items = relationship("Item", back_populates="owner")  # Clave Foránea
+    #items = relationship("Item", back_populates="owner") Clave Foranea
