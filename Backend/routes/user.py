@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 import crud.users, config.db, schemas.users, models.users
 from typing import List
 
-#america putona
+
 
 user = APIRouter()
 
