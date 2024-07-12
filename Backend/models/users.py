@@ -1,29 +1,28 @@
-# models/usuarios.py
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Boolean, DateTime, ForeignKey, Enum
+from sqlalchemy.dialects.mysql import LONGTEXT
+from sqlalchemy.orm import relationship
 from config.db import Base
+import models.persons
+import enum
 
-class Usuario(Base):
-    __tablename__ = 'usuarios'
-    id = Column(Integer, primary_key=True, index=True)
-    nombre = Column(String, index=True)
+class MyEstatus(enum.Enum):
+    Activo = "Activo"
+    Inactivo = "Inactivo"
+    Bloqueado = "Bloqueado"
+    Suspendido = "Suspendido"
+    
 
-# models/roles.py
-from sqlalchemy import Column, Integer, String
-from config.db import Base
+class User(Base):
+    __tablename__ = "tbb_usuarios"
 
-class Rol(Base):
-    __tablename__ = 'roles'
-    id = Column(Integer, primary_key=True, index=True)
-    nombre = Column(String, index=True)
-
-# models/usuarios_roles.py
-from sqlalchemy import Column, ForeignKey, Integer
-from config.db import Base
-from models.usuarios import Usuario
-from models.roles import Rol
-
-class UsuarioRol(Base):
-    __tablename__ = 'usuarios_roles'
-    id = Column(Integer, primary_key=True, index=True)
-    Usuario_ID = Column(Integer, ForeignKey('usuarios.id'))
-    Rol_ID = Column(Integer, ForeignKey('roles.id'))
+    ID = Column(Integer, primary_key=True, index=True)
+    Persona_ID = Column(Integer, ForeignKey("tbb_personas.ID"))
+    Nombre_Usuario = Column(String(60))
+    Correo_Electronico = Column(String(100))
+    Contrasena = Column(String(40))
+    Numero_Telefonico_Movil = Column(String(20))
+    Estatus = Column(Enum(MyEstatus))
+    Fecha_Registro = Column(DateTime)
+    Fecha_Actualizacion = Column(DateTime)
+    # Clave foránea para la relación uno a uno con User
+    

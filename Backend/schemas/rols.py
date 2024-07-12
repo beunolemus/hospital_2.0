@@ -1,6 +1,6 @@
 from typing import List, Union
 from pydantic import BaseModel
-from datetime import datetime
+from datetime import datetime, date
 
 class RolBase(BaseModel):
     Nombre: str
@@ -16,7 +16,6 @@ class RolUpdate(RolBase):
     pass
 
 class Rol(RolBase):
-    id: int
-    
+    ID: int
     class Config:
         orm_mode = True
