@@ -5,8 +5,8 @@ from routes.rol import rol
 from routes.userrol import userrol
 
 app=FastAPI(
-    title="Gimnasio S.A. de C.V.",
-    description="API para el almacenamiento de informacipn de un gimnasio"
+    title="Hospital ",
+    description="API para el almacenamiento de informacipn de un Hospital"
 )
 app.include_router(user)
 app.include_router(person)
