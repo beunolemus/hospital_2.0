@@ -13,3 +13,4 @@ class Rol(Base):
     Fecha_Registro = Column(DateTime)
     Fecha_Actualizacion = Column(DateTime)
     
+

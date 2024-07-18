@@ -20,3 +20,5 @@ class UserRol(UserRolBase):
     Rol_ID: int
     class Config:
         orm_mode = True
+
+
