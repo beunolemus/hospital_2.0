@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\PC-15\Desktop\Apihospital\ApiHospital
+set VIRTUAL_ENV=E:\hospital_2.0\Backend\ApiHospital
 
 if not defined PROMPT set PROMPT=$P$G
 
