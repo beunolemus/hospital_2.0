@@ -1,14 +1,15 @@
-from sqlalchemy import Column, Integer, String, Boolean, DateTime, Enum, Date
+from sqlalchemy import Column, Integer, String, Boolean, DateTime, ForeignKey, Enum, Date
+from sqlalchemy.dialects.mysql import LONGTEXT
 from sqlalchemy.orm import relationship
 from config.db import Base
 import enum
 
-class MyGenero(str, enum.Enum):
+class MyGenero(enum.Enum):
     Masculino = "Masculino"
     Femenino = "Femenino"
     Otro = "Otro"
 
-class MySangre(str, enum.Enum):
+class MySangre(enum.Enum):
     AP = "A+"
     AN = "A-"
     BP = "B+"
