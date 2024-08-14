@@ -29,12 +29,11 @@ const router = createRouter({
       component: dashboard,
       children:[
         {path:'/persona',name:'persona', component : Persona},
-<<<<<<< HEAD
-        {path:'/calendario',name:'calendar', component : Calendar}
-=======
+
+        {path:'/calendario',name:'calendar', component : Calendar},
 
         {path:"/registerC",name:"registerC",component:RegisterC}
->>>>>>> master
+
       ]
     }
   ]
