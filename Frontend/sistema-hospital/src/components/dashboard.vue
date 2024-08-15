@@ -20,7 +20,6 @@
                </a>
             </li>
 
-<<<<<<< HEAD
              <li>
                 <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example0" data-collapse-toggle="dropdown-example_7">
                   <span class="material-symbols-outlined">
@@ -338,8 +337,7 @@
        </div> -->
     </div>
     
-    </template>
-=======
+    
             <li>
                <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example0" data-collapse-toggle="dropdown-example_7">
                  <span class="material-symbols-outlined">
@@ -363,8 +361,6 @@
                      <li>
                         <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Bitácora</a>
                      </li>
-                     
-                     
                </ul>
             </li>
 
@@ -675,4 +671,4 @@
    </div>
    
    </template>
->>>>>>> master
+
