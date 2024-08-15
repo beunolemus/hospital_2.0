@@ -1,4 +1,6 @@
 <template>
+     
+    <h2 class="font-bold text-3xl text-[#0F6466] mb-4 titulo-centrado">Dashboard Cirugías</h2>
     <b-container fluid>
       <b-row>
         <b-col lg="6" sm="12">
@@ -169,5 +171,12 @@
   .card-body {
     padding: 15px;
   }
-  </style>
+  
+
+  .titulo-centrado {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+</style>
   
