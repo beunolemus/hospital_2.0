@@ -11,6 +11,7 @@ import RegisterC from '@/components/RegisterC.vue'
 import tablaC from '@/components/tablaC.vue'
 
 import GraficasC from '@/components/graficasC.vue'
+import CrearC from '@/components/CrearC.vue'
 
 
 const router = createRouter({
@@ -41,8 +42,8 @@ const router = createRouter({
 
         {path:"/graficasC",name:"graficasC",component:GraficasC},
 
-        {path:'/calendario',name:'calendar', component : Calendar},
-        {path:"/registerC",name:"registerC",component:RegisterC}
+        {path:"/crearC",name:"crearC",component:CrearC}
+
        
       ]
     }
