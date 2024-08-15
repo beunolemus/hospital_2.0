@@ -3,9 +3,15 @@ import RegisterUser from '@/components/registerUser.vue'
 import LoginVuew from '@/components/login.vue'
 import dashboard from '@/components/dashboard.vue'
 import Persona from '@/components/persona.vue'
+import Calendar from '@/components/calendar.vue'
+
 
 import RegisterC from '@/components/RegisterC.vue'
 
+import tablaC from '@/components/tablaC.vue'
+
+import GraficasC from '@/components/graficasC.vue'
+import CrearC from '@/components/CrearC.vue'
 
 
 const router = createRouter({
@@ -28,7 +34,17 @@ const router = createRouter({
       children:[
         {path:'/persona',name:'persona', component : Persona},
 
-        {path:"/registerC",name:"registerC",component:RegisterC}
+        {path:'/calendario',name:'calendar', component : Calendar},
+
+        {path:"/registerC",name:"registerC",component:RegisterC},
+
+        {path:"/tablac",name:"tablac",component:tablaC},
+
+        {path:"/graficasC",name:"graficasC",component:GraficasC},
+
+        {path:"/crearC",name:"crearC",component:CrearC}
+
+       
       ]
     }
   ]
