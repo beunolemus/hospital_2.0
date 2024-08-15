@@ -85,7 +85,8 @@ export default {
   },
   methods: {
     irACrearCirugia() {
-      this.$router.push({ name: 'CrearCirugias' }); // Redirecciona a la vista CrearCirugias
+      // Redirige a la página de crear cirugía
+      window.location.href = 'http://localhost:5173/crearC';
     },
     eliminarCirugia(id) {
       fetch(`http://127.0.0.1:8000/hospital/api/v1/cirugias/${id}/`, {
