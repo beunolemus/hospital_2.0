@@ -39,7 +39,7 @@ const router = createRouter({
 
         {path:"/tablac",name:"tablac",component:tablaC},
 
-        {path:"/graficasC",name:"graficasC",component:GraficasC}
+        {path:"/graficasC",name:"graficasC",component:GraficasC},
 
         {path:'/calendario',name:'calendar', component : Calendar},
         {path:"/registerC",name:"registerC",component:RegisterC}
