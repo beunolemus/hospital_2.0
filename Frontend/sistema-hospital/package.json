@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@vuepic/vue-datepicker": "^8.7.0",
+    "axios": "^1.7.4",
     "tailwindcss": "^3.4.4",
     "vue": "^3.4.21",
+    "vue-chart-3": "^3.1.8",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
