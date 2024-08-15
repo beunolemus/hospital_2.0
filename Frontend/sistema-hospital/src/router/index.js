@@ -8,6 +8,9 @@ import Calendar from '@/components/calendar.vue'
 
 import RegisterC from '@/components/RegisterC.vue'
 
+import tablaC from '@/components/tablaC.vue'
+
+import GraficasC from '@/components/graficasC.vue'
 
 
 const router = createRouter({
@@ -29,6 +32,15 @@ const router = createRouter({
       component: dashboard,
       children:[
         {path:'/persona',name:'persona', component : Persona},
+
+        {path:'/calendario',name:'calendar', component : Calendar},
+
+        {path:"/registerC",name:"registerC",component:RegisterC},
+
+        {path:"/tablac",name:"tablac",component:tablaC},
+
+        {path:"/graficasC",name:"graficasC",component:GraficasC}
+
         {path:'/calendario',name:'calendar', component : Calendar},
         {path:"/registerC",name:"registerC",component:RegisterC}
        
