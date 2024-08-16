@@ -10,6 +10,8 @@ import RegisterC from '@/components/RegisterC.vue'
 
 import tablaC from '@/components/tablaC.vue'
 
+import EditCirugia  from '@/components/EditCirugia.vue'
+
 import GraficasC from '@/components/graficasC.vue'
 import CrearC from '@/components/CrearC.vue'
 
@@ -39,6 +41,8 @@ const router = createRouter({
         {path:"/registerC",name:"registerC",component:RegisterC},
 
         {path:"/tablac",name:"tablac",component:tablaC},
+
+        {path:"/EditCirugia",name:"EditCirugia",component:EditCirugia},
 
         {path:"/graficasC",name:"graficasC",component:GraficasC},
 
