@@ -3,13 +3,10 @@ import RegisterUser from '@/components/registerUser.vue'
 import LoginVuew from '@/components/login.vue'
 import dashboard from '@/components/dashboard.vue'
 import Persona from '@/components/persona.vue'
+// seccion de cirugias
 import Calendar from '@/components/calendar.vue'
-
-
 import RegisterC from '@/components/RegisterC.vue'
-
 import tablaC from '@/components/tablaC.vue'
-
 import GraficasC from '@/components/graficasC.vue'
 import CrearC from '@/components/CrearC.vue'
 
