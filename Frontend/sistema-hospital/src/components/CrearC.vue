@@ -79,8 +79,9 @@ export default {
       // Aquí puedes agregar la lógica para enviar los datos al backend
     },
     goToSurgeryList() {
-      window.location.href = 'http://localhost:5173/tablaC';
+    this.$router.push('/tablaC');
     }
+
   }
 };
 </script>
