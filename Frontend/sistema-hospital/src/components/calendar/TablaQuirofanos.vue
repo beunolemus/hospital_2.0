@@ -6,13 +6,17 @@
         <tr>
           <th>Nombre del Quirófano</th>
           <th>Capacidad</th>
+          <th>Estatus de cirugia</th>
           <th>Horarios Disponibles</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="quirófano in quirófanosFiltrados" :key="quirófano.id">
-          <td>{{ quirófano.nombre }}</td>
+          <td>{{ quirófano.nombre_quirofano }}</td>
           <td>{{ quirófano.capacidad }}</td>
+          <td>
+            aqui va el estatus de la cirugia
+          </td>
           <td>
             <ul>
               <li v-for="disponibilidad in quirófano.disponibilidad" :key="disponibilidad.fecha">

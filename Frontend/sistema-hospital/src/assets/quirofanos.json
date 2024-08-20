@@ -1,182 +1,92 @@
 [
     {
       "id": 1,
-      "nombre": "Quirófano A",
+      "nombre_quirofano": "Quirófano A-106",
       "capacidad": 2,
       "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["08:00", "10:00", "12:00"] },
-        { "fecha": "2024-08-16", "horarios": ["09:00", "11:00", "13:00"] }
+        { "fecha": "2024-08-20", "horarios": ["08:00", "10:00", "12:00"] },
+        { "fecha": "2024-08-30", "horarios": ["09:00", "11:00", "13:00"] }
       ]
     },
     {
       "id": 2,
-      "nombre": "Quirófano B",
+      "nombre_quirofano": "Quirófano A-106",
       "capacidad": 3,
       "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["07:00", "11:00", "15:00"] },
-        { "fecha": "2024-08-16", "horarios": ["08:00", "12:00", "16:00"] }
+        { "fecha": "2024-08-20", "horarios": ["08:00", "10:00", "12:00"] },
+        { "fecha": "2024-08-30", "horarios": ["09:00", "11:00", "13:00"] }
       ]
     },
     {
       "id": 3,
-      "nombre": "Quirófano C",
+      "nombre_quirofano": "Quirófano A-106",
       "capacidad": 1,
       "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["07:00", "11:00", "15:00"] },
-        { "fecha": "2024-08-16", "horarios": ["08:00", "12:00", "16:00"] }
+        { "fecha": "2024-08-20", "horarios": ["08:00", "10:00", "12:00"] },
+        { "fecha": "2024-08-30", "horarios": ["09:00", "11:00", "13:00"] }
       ]
     },
     {
       "id": 4,
-      "nombre": "Quirófano D",
+      "nombre_quirofano": "Quirófano A-107",
       "capacidad": 4,
       "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["07:00", "11:00", "15:00"] },
-        { "fecha": "2024-08-16", "horarios": ["08:00", "12:00", "16:00"] }
+        { "fecha": "2024-08-20", "horarios": ["08:00", "10:00", "12:00"] },
+        { "fecha": "2024-08-30", "horarios": ["09:00", "11:00", "13:00"] }
       ]
     },
     {
       "id": 2,
-      "nombre": "Quirófano E",
+      "nombre_quirofano": "Quirófano A-107",
       "capacidad": 3,
       "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["07:00", "11:00", "15:00"] },
-        { "fecha": "2024-08-16", "horarios": ["08:00", "12:00", "16:00"] }
+        { "fecha": "2024-08-20", "horarios": ["08:00", "10:00", "12:00"] },
+        { "fecha": "2024-08-30", "horarios": ["09:00", "11:00", "13:00"] }
       ]
     },
     {
       "id": 2,
-      "nombre": "Quirófano F",
+      "nombre_quirofano": "Quirófano A-107",
       "capacidad": 3,
       "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["07:00", "11:00", "15:00"] },
-        { "fecha": "2024-08-16", "horarios": ["08:00", "12:00", "16:00"] }
+        { "fecha": "2024-08-20", "horarios": ["08:00", "10:00", "12:00"] },
+        { "fecha": "2024-08-30", "horarios": ["09:00", "11:00", "13:00"] }
       ]
     },
     {
       "id": 2,
-      "nombre": "Quirófano G",
+      "nombre_quirofano": "Quirófano A-107",
       "capacidad": 3,
       "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["07:00", "11:00", "15:00"] },
-        { "fecha": "2024-08-16", "horarios": ["08:00", "12:00", "16:00"] }
+        { "fecha": "2024-08-20", "horarios": ["08:00", "10:00", "12:00"] },
+        { "fecha": "2024-08-30", "horarios": ["09:00", "11:00", "13:00"] }
       ]
     },
     {
       "id": 2,
-      "nombre": "Quirófano H",
+      "nombre_quirofano": "Quirófano A-107",
       "capacidad": 3,
       "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["07:00", "11:00", "15:00"] },
-        { "fecha": "2024-08-16", "horarios": ["08:00", "12:00", "16:00"] }
+        { "fecha": "2024-08-20", "horarios": ["08:00", "10:00", "12:00"] },
+        { "fecha": "2024-08-30", "horarios": ["09:00", "11:00", "13:00"] }
       ]
     },
     {
       "id": 2,
-      "nombre": "Quirófano I",
+      "nombre_quirofano": "Quirófano A-107",
       "capacidad": 3,
       "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["07:00", "11:00", "15:00"] },
-        { "fecha": "2024-08-16", "horarios": ["08:00", "12:00", "16:00"] }
+        { "fecha": "2024-08-20", "horarios": ["08:00", "10:00", "12:00"] },
+        { "fecha": "2024-08-30", "horarios": ["09:00", "11:00", "13:00"] }
       ]
     },
     {
       "id": 2,
-      "nombre": "Quirófano J",
+      "nombre_quirofano": "Quirófano A-107",
       "capacidad": 3,
       "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["07:00", "11:00", "15:00"] },
-        { "fecha": "2024-08-16", "horarios": ["08:00", "12:00", "16:00"] }
-      ]
-    },
-    {
-      "id": 2,
-      "nombre": "Quirófano K",
-      "capacidad": 3,
-      "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["07:00", "11:00", "15:00"] },
-        { "fecha": "2024-08-16", "horarios": ["08:00", "12:00", "16:00"] }
-      ]
-    },
-    {
-      "id": 2,
-      "nombre": "Quirófano L",
-      "capacidad": 3,
-      "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["07:00", "11:00", "15:00"] },
-        { "fecha": "2024-08-16", "horarios": ["08:00", "12:00", "16:00"] }
-      ]
-    },
-    {
-      "id": 2,
-      "nombre": "Quirófano M",
-      "capacidad": 3,
-      "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["07:00", "11:00", "15:00"] },
-        { "fecha": "2024-08-16", "horarios": ["08:00", "12:00", "16:00"] }
-      ]
-    },
-    {
-      "id": 2,
-      "nombre": "Quirófano N",
-      "capacidad": 3,
-      "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["07:00", "11:00", "15:00"] },
-        { "fecha": "2024-08-16", "horarios": ["08:00", "12:00", "16:00"] }
-      ]
-    },
-    {
-      "id": 2,
-      "nombre": "Quirófano Ñ",
-      "capacidad": 3,
-      "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["07:00", "11:00", "15:00"] },
-        { "fecha": "2024-08-16", "horarios": ["08:00", "12:00", "16:00"] }
-      ]
-    },
-    {
-      "id": 2,
-      "nombre": "Quirófano O",
-      "capacidad": 3,
-      "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["07:00", "11:00", "15:00"] },
-        { "fecha": "2024-08-16", "horarios": ["08:00", "12:00", "16:00"] }
-      ]
-    },
-    {
-      "id": 2,
-      "nombre": "Quirófano P",
-      "capacidad": 3,
-      "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["07:00", "11:00", "15:00"] },
-        { "fecha": "2024-08-16", "horarios": ["08:00", "12:00", "16:00"] }
-      ]
-    },
-    {
-      "id": 2,
-      "nombre": "Quirófano Q",
-      "capacidad": 3,
-      "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["07:00", "11:00", "15:00"] },
-        { "fecha": "2024-08-16", "horarios": ["08:00", "12:00", "16:00"] }
-      ]
-    },
-    {
-      "id": 2,
-      "nombre": "Quirófano R",
-      "capacidad": 3,
-      "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["07:00", "11:00", "15:00"] },
-        { "fecha": "2024-08-16", "horarios": ["08:00", "12:00", "16:00"] }
-      ]
-    },
-    {
-      "id": 2,
-      "nombre": "Quirófano S",
-      "capacidad": 3,
-      "disponibilidad": [
-        { "fecha": "2024-08-15", "horarios": ["07:00", "11:00", "15:00"] },
-        { "fecha": "2024-08-16", "horarios": ["08:00", "12:00", "16:00"] }
+        { "fecha": "2024-08-20", "horarios": ["08:00", "10:00", "12:00"] },
+        { "fecha": "2024-08-30", "horarios": ["09:00", "11:00", "13:00"] }
       ]
     }
 
