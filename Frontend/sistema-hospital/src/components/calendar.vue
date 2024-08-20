@@ -24,22 +24,24 @@ export default {
   data() {
     return {
       fecha: new Date().toISOString().substr(0, 10),
-      capacidadMinima: 1,
+      estatusCirugia: '', // Añadir estatusCirugia en lugar de capacidadMinima
       datosQuirofanos: datosQuirofanos
     };
   },
   computed: {
     quirofanosFiltrados() {
-      return this.datosQuirofanos.filter(q => q.capacidad >= this.capacidadMinima);
-    }
+    return this.datosQuirofanos.filter(q => 
+      q.estatus.toLowerCase().includes(this.estatusCirugia.toLowerCase())
+    );
+  }
   },
   methods: {
     actualizarFecha(nuevaFecha) {
       this.fecha = nuevaFecha;
     },
-    actualizarFiltro(nuevaCapacidad) {
-      this.capacidadMinima = nuevaCapacidad;
-    }
+    actualizarFiltro(nuevoEstatus) {
+    this.estatusCirugia = nuevoEstatus;
+  }
   }
 };
 </script>

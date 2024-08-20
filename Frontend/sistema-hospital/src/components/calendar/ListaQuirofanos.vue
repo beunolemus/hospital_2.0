@@ -1,9 +1,8 @@
 <template>
     <div>
-      <h2>Quirófanos disponibles para {{ fechaSeleccionada }}</h2>
+      <h2>Quirófanos disponibles para {{ fechaSeleccionada }}</h2><br>
       <div v-for="quirófano in quirófanos" :key="quirófano.id">
         <h3>{{ quirófano.nombre_quirofano }}</h3>
-        <p>Capacidad: {{ quirófano.capacidad }}</p>
         <ul>
           <li v-for="horario in quirófano.disponibilidad" :key="horario.hora">
             {{ horario }}

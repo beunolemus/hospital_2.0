@@ -1,6 +1,6 @@
 <template>
-    <div>
-      <label for="fecha">Selecciona una fecha:</label>
+    <div class="text-center mx-auto">
+      <label for="fecha">Selecciona una fecha:</label><br>
       <input type="date" v-model="fechaSeleccionada" @change="emitirFecha">
     </div>
   </template>
