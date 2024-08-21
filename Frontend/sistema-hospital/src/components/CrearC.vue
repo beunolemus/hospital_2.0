@@ -48,6 +48,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
@@ -62,7 +64,7 @@ export default {
     };
   },
   methods: {
-    registerSurgery() {
+    async registerSurgery() {
       const nuevaCirugia = {
         nombreCirugia: this.nombreCirugia,
         descripcion: this.descripcion,
@@ -74,18 +76,16 @@ export default {
         consumible: this.consumible
       };
 
-      console.log("Cirugía registrada:", nuevaCirugia);
-
-      // Aquí puedes agregar la lógica para enviar los datos al backend
+      try {
+        const response = await axios.post('https://renderbackend-dwke.onrender.com/cirugias/', nuevaCirugia);
+        console.log("Cirugía registrada:", response.data);
+      } catch (error) {
+        console.error("Error al registrar la cirugía:", error);
+      }
     },
     goToSurgeryList() {
-    this.$router.push('/tablaC');
+      this.$router.push('/tablaC');
     }
-
   }
 };
 </script>
-
-<style scoped>
-/* Aquí puedes agregar estilos específicos para tu componente */
-</style>
