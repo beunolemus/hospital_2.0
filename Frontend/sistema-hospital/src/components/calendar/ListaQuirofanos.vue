@@ -1,10 +1,10 @@
 <template>
     <div>
       <h2>Quirófanos disponibles para {{ fechaSeleccionada }}</h2><br>
-      <div v-for="quirófano in quirófanos" :key="quirófano.id">
-        <h3>{{ quirófano.nombre_quirofano }}</h3>
+      <div v-for="quirofano in quirofanos" :key="quirofano.ID">
+        <h3>{{ quirofano.nombre_quirofano }}</h3>
         <ul>
-          <li v-for="horario in quirófano.disponibilidad" :key="horario.hora">
+          <li v-for="horario in quirofano.horario" :key="horario.hora">
             {{ horario }}
           </li>
         </ul>
@@ -18,7 +18,7 @@
     computed: {
       quirófanos() {
         return this.datosQuirofanos.filter(q => 
-          q.disponibilidad.some(d => d.fecha === this.fechaSeleccionada)
+          q.horario.some(d => d.fecha === this.fechaSeleccionada)
         );
       }
     }

@@ -13,12 +13,7 @@
 import SelectorFecha from './calendar/SelectorFecha.vue';
 import FiltroQuirofano from './calendar/FiltroQuirofano.vue';
 import TablaQuirofanos from './calendar/TablaQuirofanos.vue';
-import datosQuirofanos from '@/assets/quirofanos.json';
-
-import {  obtenerDatosConToken } from '@/services/authService.js';
-const response = await  obtenerDatosConToken();
-console.log('aqui va los datos de cirugia',response);
-
+import { obtenerDatosConToken } from '@/services/authService.js'; // Asegúrate de ajustar el path
 
 export default {
   components: {
@@ -30,23 +25,34 @@ export default {
     return {
       fecha: new Date().toISOString().substr(0, 10),
       estatusCirugia: '', // Añadir estatusCirugia en lugar de capacidadMinima
-      datosQuirofanos: datosQuirofanos
+      datosQuirofanos: []
     };
   },
   computed: {
     quirofanosFiltrados() {
-    return this.datosQuirofanos.filter(q => 
-      q.estatus.toLowerCase().includes(this.estatusCirugia.toLowerCase())
-    );
-  }
+      // Filtrar los quirófanos según la fecha seleccionada y el estatus
+      return this.datosQuirofanos.filter(q => 
+        new Date(q.Horario).toLocaleDateString() === new Date(this.fecha).toLocaleDateString() &&
+        q.Estatus.toLowerCase().includes(this.estatusCirugia.toLowerCase())
+      );
+    }
+  },
+  async created() {
+    try {
+      const response = await obtenerDatosConToken();
+      this.datosQuirofanos = response; // Asegúrate de que el formato de respuesta sea un array de objetos
+      console.log(response)
+    } catch (error) {
+      console.error('Error al obtener los datos:', error);
+    }
   },
   methods: {
     actualizarFecha(nuevaFecha) {
       this.fecha = nuevaFecha;
     },
     actualizarFiltro(nuevoEstatus) {
-    this.estatusCirugia = nuevoEstatus;
-  }
+      this.estatusCirugia = nuevoEstatus;
+    }
   }
 };
 </script>
