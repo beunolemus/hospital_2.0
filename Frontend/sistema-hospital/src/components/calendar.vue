@@ -15,6 +15,11 @@ import FiltroQuirofano from './calendar/FiltroQuirofano.vue';
 import TablaQuirofanos from './calendar/TablaQuirofanos.vue';
 import datosQuirofanos from '@/assets/quirofanos.json';
 
+import {  obtenerDatosConToken } from '@/services/authService.js';
+const response = await  obtenerDatosConToken();
+console.log('aqui va los datos de cirugia',response);
+
+
 export default {
   components: {
     SelectorFecha,

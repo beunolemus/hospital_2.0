@@ -6,10 +6,23 @@ from routes.userrol import userrol
 from routes.cirugia import cirugia_router
 from routes.espacios import espacio
 from routes.horarios import horarios 
+
+from fastapi.middleware.cors import CORSMiddleware
+
+
+
 app=FastAPI(
     title="Hospital ",
     description="API para el almacenamiento de informacipn de un Hospital"
 )
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # Permite solicitudes desde localhost:5173
+    allow_credentials=True,
+    allow_methods=["*"],  # Permite todos los métodos HTTP
+    allow_headers=["*"],  # Permite todos los encabezados
+)
+
 app.include_router(user)
 app.include_router(person)
 app.include_router(rol)
