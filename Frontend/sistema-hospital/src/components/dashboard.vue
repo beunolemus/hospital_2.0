@@ -213,7 +213,11 @@
                     
                      <RouterLink to="/calendario">
                      <li>
+<<<<<<< HEAD
                         <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Registro de Cirugias</a>
+=======
+                        <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Calendario Cirugias</a>
+>>>>>>> Diego
                      </li>
                     </RouterLink>
 
@@ -234,6 +238,15 @@
                      </li>
                     </RouterLink>
 
+<<<<<<< HEAD
+=======
+                    <RouterLink to="/horarios">
+                     <li>
+                        <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Horarios</a>
+                     </li>
+                    </RouterLink>
+
+>>>>>>> Diego
                </ul>
             </li>
             <li>

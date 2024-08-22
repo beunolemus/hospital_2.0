@@ -41,6 +41,13 @@
           <div class="w-full">
             <button class="bg-[#0593A2] text-white py-2 rounded-xl w-full hover:scale-105 duration-300 hover:bg-[#002c7424] font-medium" type="button" @click="goToSurgeryList">Lista de Cirugías</button>
           </div>
+<<<<<<< HEAD
+=======
+          <!-- Botón Editar -->
+          <div class="w-full">
+            <button class="bg-[#0593A2] text-white py-2 rounded-xl w-full hover:scale-105 duration-300  hover:bg-[#002c7424] font-medium" type="button" @click="goToEditSurgery">Editar Cirugía</button>
+          </div>
+>>>>>>> Diego
         </form>
       </div>
     </div>
@@ -80,6 +87,13 @@ export default {
     },
     goToSurgeryList() {
       window.location.href = 'http://localhost:5173/tablaC';
+<<<<<<< HEAD
+=======
+    },
+    goToEditSurgery() {
+      // Redirige a la página de edición de cirugía
+      window.location.href = 'http://localhost:5173/EditCirugia'; //----Editar
+>>>>>>> Diego
     }
   }
 };
