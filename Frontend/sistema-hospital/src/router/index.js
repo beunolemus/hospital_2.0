@@ -11,7 +11,7 @@ import RegisterC from '@/components/RegisterC.vue'
 
 import tablaC from '@/components/tablaC.vue'
 
-import EditCirugia  from '@/components/EditCirugia.vue'
+import EditCirugia  from '@/components/editarC.vue'
 
 import GraficasC from '@/components/graficasC.vue'
 import CrearC from '@/components/CrearC.vue'

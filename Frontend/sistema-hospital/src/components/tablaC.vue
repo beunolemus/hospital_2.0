@@ -1,20 +1,27 @@
 <template>
-  <div>
-    <!-- Título centrado y con letra más grande -->
-    <h1 class="titulo-centrado">Tabla de Cirugías</h1>
-    <div class="contenedor-superior">
-      <!-- Botón para crear cirugía alineado a la derecha y más grande -->
-      <button @click="irACrearCirugia" class="boton-crear">Crear Cirugía</button>
+  <div class="container mt-4">
+    <!-- Título centrado, más grande y en negrita -->
+    <h1 class="text-center mb-4 font-weight-bold" style="font-size: 36px;">Tabla de Cirugías</h1>
+    
+    <div class="d-flex justify-content-between mb-3">
+      <!-- Botón para crear cirugía alineado a la derecha -->
+      <button @click="irACrearCirugia" class="btn btn-secondary">Crear Cirugía</button>
+      
       <!-- Barra de búsqueda centrada y con color verde -->
-      <div class="barra-busqueda">
-        <input v-model="busqueda" placeholder="Buscar cirugía..." />
-        <i class="fas fa-search"></i>
+      <div class="input-group" style="max-width: 400px;">
+        <input v-model="busqueda" type="text" class="form-control" placeholder="Buscar cirugía..." />
+        <span class="input-group-text bg-success text-white">
+          <i class="fas fa-search"></i>
+        </span>
       </div>
     </div>
-    <table>
-      <thead>
+    
+    <table class="table table-bordered">
+      <thead class="bg-light">
         <tr>
-          <th>Id de la Cirugía</th>
+          <th class="blue-column">Id de la Cirugía</th>
+          <th>Paciente_ID</th>
+          <th>Espacio_Medico_ID</th>
           <th>Tipo</th>
           <th>Nombre</th>
           <th>Descripción</th>
@@ -28,7 +35,9 @@
       </thead>
       <tbody>
         <tr v-for="cirugia in cirugiasFiltradas" :key="cirugia.ID">
-          <td>{{ cirugia.ID }}</td>
+          <td class="blue-column">{{ cirugia.ID }}</td>
+          <td>{{ cirugia.Paciente_ID }}</td>
+          <td>{{ cirugia.Espacio_Medico_ID }}</td>
           <td>{{ cirugia.Tipo }}</td>
           <td>{{ cirugia.Nombre }}</td>
           <td>{{ cirugia.Descripcion }}</td>
@@ -38,10 +47,10 @@
           <td>{{ cirugia.Estatus }}</td>
           <td>{{ cirugia.Consumible }}</td>
           <td>
-            <button @click="eliminarCirugia(cirugia.ID)">
+            <button @click="eliminarCirugia(cirugia.ID)" class="btn btn-danger btn-sm">
               <i class="fas fa-trash-alt"></i> Eliminar
             </button>
-            <button @click="editarCirugia(cirugia.ID)">
+            <button @click="editarCirugia(cirugia.ID)" class="btn btn-warning btn-sm">
               <i class="fas fa-edit"></i> Editar
             </button>
           </td>
@@ -52,162 +61,113 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
       cirugias: [],
       busqueda: '', // Variable para almacenar el texto de búsqueda
+      token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOb21icmVfVXN1YXJpbyI6InN0cmluZyIsIkNvcnJlb19FbGVjdHJvbmljbyI6InN0cmluZyIsIkNvbnRyYXNlbmEiOiJzdHJpbmciLCJOdW1lcm9fVGVsZWZvbmljb19Nb3ZpbCI6InN0cmluZyJ9.1tIv5sjC7ltAH08d4Ngyb44Ba-uK2p3LW9_yuYf42qM', // Reemplaza con tu token real
     };
   },
   computed: {
     cirugiasFiltradas() {
-      // Filtra las cirugías basadas en el texto de búsqueda
-      return this.cirugias.filter(cirugia => {
-        return (
-          cirugia.Tipo.toLowerCase().includes(this.busqueda.toLowerCase()) ||
-          cirugia.Nombre.toLowerCase().includes(this.busqueda.toLowerCase()) ||
-          cirugia.Descripcion.toLowerCase().includes(this.busqueda.toLowerCase()) ||
-          cirugia.Nivel_Urgencia.toLowerCase().includes(this.busqueda.toLowerCase()) ||
-          cirugia.Estatus.toLowerCase().includes(this.busqueda.toLowerCase()) ||
-          cirugia.Consumible.toLowerCase().includes(this.busqueda.toLowerCase())
-        );
-      });
-    },
+    const searchTerm = this.busqueda.toLowerCase();
+
+    // Convertir el término de búsqueda a cadena para comparar
+    return this.cirugias.filter(cirugia => {
+      // Convertir los valores a cadenas y hacer la comparación
+      const pacienteId = (cirugia.Paciente_ID !== undefined && cirugia.Paciente_ID !== null) ? cirugia.Paciente_ID.toString().toLowerCase() : '';
+      const espacioMedicoId = (cirugia.Espacio_Medico_ID !== undefined && cirugia.Espacio_Medico_ID !== null) ? cirugia.Espacio_Medico_ID.toString().toLowerCase() : '';
+      const tipo = (cirugia.Tipo || '').toString().toLowerCase();
+      const nombre = (cirugia.Nombre || '').toString().toLowerCase();
+      const descripcion = (cirugia.Descripcion || '').toString().toLowerCase();
+      const nivelUrgencia = (cirugia.Nivel_Urgencia || '').toString().toLowerCase();
+      const estatus = (cirugia.Estatus || '').toString().toLowerCase();
+      const consumible = (cirugia.Consumible || '').toString().toLowerCase();
+
+      return (
+        pacienteId.includes(searchTerm) ||
+        espacioMedicoId.includes(searchTerm) ||
+        tipo.includes(searchTerm) ||
+        nombre.includes(searchTerm) ||
+        descripcion.includes(searchTerm) ||
+        nivelUrgencia.includes(searchTerm) ||
+        estatus.includes(searchTerm) ||
+        consumible.includes(searchTerm)
+      );
+    });
+  },
   },
   mounted() {
-    // Hacer la solicitud a la API y obtener los datos de cirugías
-    fetch('http://127.0.0.1:8000/hospital/api/v1/cirugias/')
-      .then(response => response.json())
-      .then(data => {
-        this.cirugias = data; // Asignar los datos a la variable cirugias
-      })
-      .catch(error => console.error('Error al obtener los datos:', error));
+    this.obtenerCirugias();
   },
   methods: {
     irACrearCirugia() {
-      // Redirige a la página de crear cirugía
-      window.location.href = 'http://localhost:5173/crearC';
+      this.$router.push({ name: 'crearC' }); // Redirecciona a la vista CrearCirugias
     },
     eliminarCirugia(id) {
-      fetch(`http://127.0.0.1:8000/hospital/api/v1/cirugias/${id}/`, {
-        method: 'DELETE'
+      axios.delete(`http://127.0.0.1:8000/cirugia/${id}/`, {
+        headers: {
+          'Authorization': `Bearer ${this.token}`,
+        }
       })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Hubo un problema al eliminar la cirugía.');
-          }
-          // Si la eliminación es exitosa, actualizar la lista de cirugías
-          this.obtenerCirugias();
-        })
-        .catch(error => console.error('Error al eliminar la cirugía:', error));
-      console.log("Eliminar cirugía con ID:", id);
+      .then(response => {
+        console.log('Response status:', response.status); // Imprime el estado de la respuesta
+        // Si la eliminación es exitosa, actualizar la lista de cirugías
+        this.obtenerCirugias();
+      })
+      .catch(error => {
+        console.error('Error al eliminar la cirugía:', error.response ? error.response.data : error.message);
+      });
     },
     editarCirugia(id) {
-      // Aquí debes implementar la lógica para editar la cirugía con el ID proporcionado
-      console.log("Editar cirugía con ID:", id);
+      this.$router.push({ name: 'editarC', params: { id: id } });
     },
+    obtenerCirugias() {
+      axios.get('http://127.0.0.1:8000/cirugias/?skip=0&limit=100', {
+        headers: {
+          'Authorization': `Bearer ${this.token}`,
+        }
+      })
+      .then(response => {
+        this.cirugias = response.data; // Asignar los datos a la variable cirugias
+      })
+      .catch(error => {
+        console.error('Error al obtener los datos:', error.response ? error.response.data : error.message);
+      });
+    }
   }
 };
+
 </script>
 
-<style scoped>
+<style>
 /* Estilos para iconos de Font Awesome */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
-</style>
-
-<style>
-/* Estilos para el título centrado y más grande */
-.titulo-centrado {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-/* Contenedor superior con botón y barra de búsqueda */
-.contenedor-superior {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-/* Estilos para el botón de crear cirugía más grande y alineado a la derecha */
-.boton-crear {
-  background-color: #239a9e;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
-  margin-left: auto;
-}
-
-.boton-crear:hover {
-  background-color: #14901a;
-}
 
 /* Estilos para la barra de búsqueda centrada y con color verde */
-.barra-busqueda {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
+.input-group-text {
+  background-color: #243e2a; /* Color verde de Bootstrap */
+  color: rgb(66, 76, 75);
 }
 
-.barra-busqueda input[type="text"] {
-  padding: 5px 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  margin-right: 5px;
-  background-color: #2ecc71; /* Color verde */
-  color: white; /* Texto en blanco para contraste */
+.form-control {
+  border-right: none;
 }
 
-.barra-busqueda i.fas.fa-search {
-  color: #239a9e; /* Color verde oscuro */
+.table {
+  margin-bottom: 0;
 }
 
-/* Estilos para la tabla */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-left: auto;
-  margin-right: auto;
+.table thead th {
+  background-color: #4a4c4d; /* Gris claro */
+  color: #495057; /* Color del texto para mejor contraste */
 }
 
-th,
-td {
-  border: 1px solid #920d0d;
-  padding: 8px;
-  text-align: left;
-}
-
-th {
-  background-color: #f2f2f2;
-}
-
-/* Estilos para los botones dentro de la tabla */
-button {
-  background-color: #239a9e;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 4px;
-  margin-right: 5px;
-}
-
-button:hover {
-  background-color: #14901a;
-}
-
-/* Estilos para el ícono */
-.fas.fa-trash-alt {
-  margin-right: 5px;
+/* Fondo azul bajito para la primera columna */
+.blue-column {
+  background-color: #220c50; /* Azul bajito */
 }
 </style>
