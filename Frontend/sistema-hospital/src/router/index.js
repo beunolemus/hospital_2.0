@@ -8,7 +8,7 @@ import horarios from '@/components/horarios.vue'
 
 
 // cirugias
-import Registros from '@/components/Registros.vue'
+import Registros from '@/components/AgendaC.vue'
 import tablaC from '@/components/tablaC.vue'
 import EditCirugia  from '@/components/editarC.vue'
 import GraficasC from '@/components/graficasC.vue'
@@ -42,7 +42,7 @@ const router = createRouter({
 
         {path:"/tablac",name:"tablac",component:tablaC},
 
-        {path:"/EditCirugia",name:"EditCirugia",component:EditCirugia},
+        {path:"/editarC/:id",name:"EditCirugia",component:EditCirugia},
 
         {path:"/horarios",name:"horarios",component:horarios},
 

@@ -45,9 +45,11 @@
             </select>
             <input class="p-2 mt-2 rounded-xl border flex-1" type="text" v-model="consumible" placeholder="Consumible" required>
           </div>
+          <RouterLink to="/tablaC">
           <div class="w-full">
             <button class="bg-gray-500 text-white py-2 rounded-xl w-full hover:scale-105 duration-300 hover:bg-[#002c7424] font-medium" type="submit">Registrar</button>
           </div>
+        </RouterLink>
           <div class="w-full">
             <button class="bg-gray-500 text-white py-2 rounded-xl w-full hover:scale-105 duration-300 hover:bg-[#002c7424] font-medium" type="button" @click="goToSurgeryList">Lista de Cirugías</button>
           </div>
@@ -115,7 +117,7 @@ export default {
       }
     },
     goToSurgeryList() {
-      this.$router.push('/registros');
+      this.$router.push('/tablaC');
     }
   }
 };
