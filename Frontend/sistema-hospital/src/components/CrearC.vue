@@ -4,14 +4,19 @@
       <div class="w-full px-8">
         <h2 class="font-bold text-3xl text-[#0F6466] mb-4">Registro de Cirugía</h2>
         <p class="text-sm mb-8 text-[#002D74]">Bienvenido al registro de Cirugía</p>
-
+        
         <form @submit.prevent="registerSurgery" class="flex flex-col gap-4">
           <!-- Sección de Datos de la Cirugía -->
           <div class="flex flex-wrap gap-4">
             <h3 class="font-bold text-xl text-[#0F6466] w-full mb-2">Detalles de la Cirugía</h3>
           <div class="flex flex-wrap gap-4">
               <input class="p-2 mt-2 rounded-xl border flex-1" type="number" v-model="paciente_id" placeholder="Paciente_ID" required>
-              <input class="p-2 mt-2 rounded-xl border flex-1" type="number" v-model="espacio_medico_id" placeholder="Espacio_Medico_ID" required>
+              <select class="p-2 mt-2 rounded-xl border flex-1" v-model="espacio_medico_id" required>
+                <option value="" disabled>Espacio_Medico_ID</option>
+                <option value="1">Quirófano	A-106</option>
+                <option value="2">Quirófano	A-107</option>
+                <option value="3">Quirófano  A-108</option>
+              </select>
           </div>
             <input class="p-2 mt-2 rounded-xl border flex-1" type="text" v-model="nombre" placeholder="Nombre de la Cirugía" required>
             <input class="p-2 mt-2 rounded-xl border flex-1" type="text" v-model="descripcion" placeholder="Descripción" required>
@@ -110,7 +115,7 @@ export default {
       }
     },
     goToSurgeryList() {
-      this.$router.push('/tablaC');
+      this.$router.push('/registros');
     }
   }
 };
