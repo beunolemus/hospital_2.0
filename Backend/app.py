@@ -5,6 +5,7 @@ from routes.rol import rol
 from routes.userrol import userrol
 from routes.espacios import espacio
 from routes.cirugia import cirugia_router
+from routes.horarios import horarios
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -29,5 +30,6 @@ app.include_router(rol)
 app.include_router(userrol)
 app.include_router(espacio)
 app.include_router(cirugia_router)
+app.include_router(horarios)
 
 print ("Hola bienvenido a mi backend")
